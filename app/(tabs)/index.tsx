@@ -40,14 +40,14 @@ export default function TabOneScreen() {
         <CircleProgress value={percentage} label="Good" />
       </View>
  
-      {/* Air Quality */}
-      <InfoBlock label="Air Quality " value={airQuality} />
-
-      {/* Main Pollutant */}
-      <InfoBlock label="Main Pollutant " value={mainPollutant} />
-
-      {/* Recommendations */}
-      <InfoBlock label="Recommendations " value={recommendations} />
+{/* Air Quality (with yellow background) */}
+  <AirQualityBlock label="Air Quality" value={airQuality} />
+  
+  {/* Main Pollutant (with light purple background) */}
+  <MainPollutantBlock label="Main Pollutant" value={mainPollutant} />
+  
+  {/* Recommendations (with light blue background) */}
+  <RecommendationsBlock label="Recommendations" value={recommendations} />
     </View>
   );
 }
@@ -135,4 +135,58 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#E0FFE0',
   },
+  airQualityBlock: {
+    backgroundColor: '#ffd700', 
+    padding: 15, 
+    borderRadius: 8, 
+    height: 80, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    width: 300, 
+  },
+    mainPollutantBlock: {
+    backgroundColor: '#dda0dd', 
+    padding: 12,
+    borderRadius: 5, 
+    height: 80, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    width: 300, 
+    },
+    recommendationsBlock: {
+    backgroundColor: '#87ceeb', 
+    padding: 10, 
+    borderRadius: 8, 
+    height: 80, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    width: 300, 
+    },
 });
+
+function AirQualityBlock({ label, value }: { label: string; value: string }) {
+  return (
+    <View style={[styles.infoBlock, styles.airQualityBlock]}>
+      <Text style={styles.infoLabel}>{label}</Text>
+      <Text style={styles.infoValue}>{value}</Text>
+    </View>
+  );
+}
+
+function MainPollutantBlock({ label, value }: { label: string; value: string }) {
+  return (
+    <View style={styles.mainPollutantBlock}>
+      <Text style={styles.infoLabel}>{label}</Text>
+      <Text style={styles.infoValue}>{value}</Text>
+    </View>
+  );
+}
+
+function RecommendationsBlock({ label, value }: { label: string; value: string }) {
+  return (
+    <View style={styles.recommendationsBlock}>
+      <Text style={styles.infoLabel}>{label}</Text>
+      <Text style={styles.infoValue}>{value}</Text>
+    </View>
+  );
+}
