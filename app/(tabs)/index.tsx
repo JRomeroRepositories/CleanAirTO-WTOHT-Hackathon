@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../../components/Themed';
-import Svg, { Circle } from 'react-native-svg'; // Import Svg and Circle from 'react-native-svg';
+import Svg, { Circle, Text as SvgText } from 'react-native-svg'; // Import Svg, Circle, and Text from 'react-native-svg';
 import { useState, useEffect } from 'react';
 
 export default function TabOneScreen() {
@@ -39,7 +39,7 @@ export default function TabOneScreen() {
       <View style={styles.circleProgress}>
         <CircleProgress value={percentage} label="Good" />
       </View>
-
+ 
       {/* Air Quality */}
       <InfoBlock label="Air Quality " value={airQuality} />
 
@@ -64,37 +64,41 @@ function InfoBlock({ label, value }: { label: string; value: string }) {
 
 // Circular Progress Component
 function CircleProgress({ value, label }: { value: number; label: string }) {
-  const angle = (value / 100) * 360;
   const radius = 45;
   const circumference = 2 * Math.PI * radius;
-  const dashArray = (angle / 360) * circumference;
+  const dashArray = (value / 100) * circumference;
 
   return (
-    <View style={styles.circleProgress}>
-      <Svg width={100} height={100}>
-        <Circle
-          r={radius}
-          cx={50}
-          cy={50}
-          fill="transparent"
-          stroke="#E0E0E0" // Background color
-          strokeWidth={10} // Width of the circle
-        />
-        <Circle
-          r={radius}
-          cx={50}
-          cy={50}
-          fill="transparent"
-          stroke="#00FF00" // Progress color
-          strokeWidth={10} // Width of the circle
-          strokeDasharray={`${dashArray}, 360`}
-          transform={`rotate(-90 50 50)`} // Start from the top
-        />
-      </Svg>
-      <View style={styles.labelContainer}>
-        <Text style={styles.labelText}>{label}</Text>
-      </View>
-    </View>
+    <Svg width={100} height={100}>
+      <Circle
+        r={radius}
+        cx={50}
+        cy={50}
+        fill="transparent"
+        stroke="#E0E0E0" // Background color
+        strokeWidth={10} // Width of the circle
+      />
+      <Circle
+        r={radius}
+        cx={50}
+        cy={50}
+        fill="transparent"
+        stroke="#00FF00" // Progress color
+        strokeWidth={10} // Width of the circle
+        strokeDasharray={`${dashArray}, 360`}
+        transform={`rotate(-90 50 50)`} // Start from the top
+      />
+      <SvgText
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        fontSize="18"
+        fontWeight="bold"
+        fill="#000"
+      >
+        {label}
+      </SvgText>
+    </Svg>
   );
 }
 
@@ -103,9 +107,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#E0FFE0',
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   dateText: {
@@ -117,6 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 10,
+    backgroundColor: '#E0FFE0',
   },
   infoLabel: {
     fontSize: 16,
@@ -127,19 +133,6 @@ const styles = StyleSheet.create({
   },
   circleProgress: {
     alignItems: 'center',
-  },
-  labelContainer: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: [
-      { translateX: -22 }, // Adjust the horizontal position
-      { translateY: -13 }, // Adjust the vertical position
-    ],
-  },
-  labelText: {
-    fontSize: 18, // Adjust the font size as needed
-    fontWeight: 'bold',
-    color: '#000',
+    backgroundColor: '#E0FFE0',
   },
 });

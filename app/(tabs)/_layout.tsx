@@ -1,7 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
-
 import Colors from '../../constants/Colors';
 
 function TabBarIcon(props: {
@@ -23,10 +22,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'CleanAirTO', // Change the header name to 'CleanAirTO'
+          title: 'Home',
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="home" color={color} /> // "home" icon for "Today" tab
+            <TabBarIcon name="home" color={color} />
           ),
+          headerTitle: 'CleanAirTO', // Set the header title for the "Home" tab
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -46,19 +46,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="two"
         options={{
-          title: 'CleanAirTO', // Change the header name to 'CleanMap'
+          title: 'Map', // Keep the tab name as "Map"
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="map" color={color} /> // "map" icon for "Map" tab
+            <TabBarIcon name="map" color={color} />
           ),
+          headerTitle: 'CleanAirTO', // Set the header title for the "Map" tab
         }}
       />
       <Tabs.Screen
         name="three"
         options={{
-          title: 'CleanAirTO', // Change the header name to 'CleanInsights'
+          title: 'Insights', // Keep the tab name as "Insights"
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="lightbulb-o" color={color} /> // Use "lightbulb-o" or your desired icon name
+            <TabBarIcon name="lightbulb-o" color={color} />
           ),
+          headerTitle: 'CleanAirTO', // Set the header title for the "Insights" tab
         }}
       />
     </Tabs>
