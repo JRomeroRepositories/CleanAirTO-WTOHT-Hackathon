@@ -2,30 +2,36 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
-export default function TabTwoScreen() {
+const Map = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Map</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
-    </View>
+  <LoadScript googleMapsApiKey="AIzaSyDBXgyLmpbdrVB2tzfGrrzqt1bTnbkWuww">
+    <GoogleMap
+      mapContainerStyle={{ width: "100%", height: "400px" }}
+      center={{ lat: 37.7749, lng: -122.4194 }} // Set your initial center coordinates
+      zoom={8} // Set your initial zoom level
+    ></GoogleMap>
+  </LoadScript>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+
+export default Map;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   title: {
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//   },
+//   separator: {
+//     marginVertical: 30,
+//     height: 1,
+//     width: '80%',
+//   },
+// });
