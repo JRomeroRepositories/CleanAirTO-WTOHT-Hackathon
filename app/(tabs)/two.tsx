@@ -4,9 +4,9 @@ import MapView, { Marker } from 'react-native-maps';
 
 const MyMap = () => {
   const locationData = [
-    { latitude: 43.64499649047999, longitude: -79.39429402110466, aqi: 1.2, temperature: 22 },
-    { latitude: 43.63499649047999, longitude: -79.38429402110466, aqi: 2.3, temperature: 24 },
-    { latitude: 43.62499649047999, longitude: -79.37429402110466, aqi: 2.9, temperature: 20 },
+    { latitude: 43.649066216880044, longitude: -79.42048185152987, aqi: 1.2, temperature: 22 }, // 43.649066216880044, -79.42048185152987
+    { latitude: 43.630922868571794, longitude: -79.43009507112255, aqi: 2.3, temperature: 24 }, // 43.630922868571794, -79.43009507112255
+    { latitude: 43.64636957935183, longitude: -79.41391775885646, aqi: 2.9, temperature: 20 }, // 43.64636957935183, -79.41391775885646
     // ... add more locations, AQI values, and temperatures as needed
   ];
 
@@ -14,8 +14,8 @@ const MyMap = () => {
     <MapView
       style={{ flex: 1 }}
       initialRegion={{
-        latitude: 43.64499649047999,
-        longitude: -79.39429402110466,
+        latitude: 43.64548088819007, //43.64548088819007, -79.42391211931405
+        longitude: -79.42391211931405,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }}
