@@ -21,7 +21,8 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
       }
     },
     "web": {
@@ -34,6 +35,9 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "googleMapsApiKey": "AIzaSyDBXgyLmpbdrVB2tzfGrrzqt1bTnbkWuww"
     }
   }
 }
