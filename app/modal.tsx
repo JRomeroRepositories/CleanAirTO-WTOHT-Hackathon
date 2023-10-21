@@ -9,7 +9,7 @@ export default function ModalScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>My Profile</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>John Doe</Text>
+      <Text style={styles.title}>Username</Text>
 
       <View style={styles.profileInfo}>
  

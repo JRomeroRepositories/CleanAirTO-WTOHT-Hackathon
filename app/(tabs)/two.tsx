@@ -1,14 +1,15 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import React from 'react';
+import { StyleSheet, ImageBackground, View } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Map</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <ImageBackground
+        source={require('../../assets/images/map.png')}
+        style={styles.imageBackground}
+      >
+        {/* Your app content goes here */}
+      </ImageBackground>
     </View>
   );
 }
@@ -16,16 +17,11 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  imageBackground: {
+    flex: 1, // This makes the image cover the entire screen
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover', // This scales the image to cover the entire screen
   },
 });
