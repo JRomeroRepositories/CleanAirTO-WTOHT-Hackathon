@@ -6,4 +6,4 @@ CleanAirTO harnesses the power of real-time environmental data to offer users a 
 ![Simulator Screenshot - iPhone 13 mini - 2023-10-21 at 15 41 35](https://github.com/JRomeroRepositories/CleanAirTO-WTOHT-Hackathon/assets/93905778/d2062342-ca62-49f0-84e8-81da8e2bf3e9)
 ![Simulator Screenshot - iPhone 13 mini - 2023-10-21 at 15 41 45](https://github.com/JRomeroRepositories/CleanAirTO-WTOHT-Hackathon/assets/93905778/a36aaefb-b4ed-4aea-b866-4e6b9ad16999)
 
-(Some feautues under maintenance, updated regularly)
+(Some features under maintenance, updated regularly)
